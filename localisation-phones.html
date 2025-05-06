@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localiser Mon Téléphone</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0e0e0e;
+      --bg-light: #ffffff;
+      --primary: #0d6efd;
+      --secondary: #212529;
+      --text-light: #f1f1f1;
+      --text-dark: #111;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+    body.light-mode {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+    header {
+      background: var(--secondary);
+      padding: 0.5rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 15px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--text-light);
+    }
+    .dark-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+    .dark-mode:hover {
+      background: #0069d9;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+    section {
+      margin-bottom: 40px;
+      background: var(--secondary);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    p {
+      color: wheat;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    a.button {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--bg-light);
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    a.button:hover {
+      background: #0069d9;
+    }
+    footer {
+      text-align: center;
+      padding: 2px;
+      background: var(--secondary);
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .alert {
+      background-color: #ff3d3d;
+      color: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .form-container {
+      margin-top: 30px;
+      background: var(--secondary);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .form-container input, .form-container textarea {
+      width: 90%;
+      padding: 12px;
+      margin: 12px 0;
+      background: #333;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 8px;
+    }
+    .form-container button {
+      padding: 12px 25px;
+      background: var(--primary);
+      color: var(--bg-light);
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .form-container button:hover {
+      background: #0069d9;
+    }
+    #success-message, #error-message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 style="color: #fff">Localiser Mon Téléphone</h1>
+  <nav>
+    <a href="#android">Android</a>
+    <a href="#iphone">iPhone</a>
+    <a href="#imei">IMEI</a>
+    <a href="#conseils">Conseils</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<button class="dark-mode" onclick="toggleDarkMode()">🌙</button>
+
+<div class="alert">
+  ⚠️ En cas de vol, contactez immédiatement votre opérateur et la police. <a href="localisationPhone.html">Qlques astuces !</a>
+</div>
+
+<main>
+  <section id="android">
+    <h2>Localiser un téléphone Android</h2>
+    <p>Utilisez le service officiel de Google pour retrouver, bloquer ou effacer votre appareil :</p>
+    <ul>
+      <li>Connectez-vous à votre compte Google utilisé sur le téléphone.</li>
+      <li>Accédez à la localisation en temps réel.</li>
+      <li>Faites sonner, verrouillez ou effacez le téléphone à distance.</li>
+    </ul>
+    <a class="button" href="https://www.google.com/android/find" target="_blank">Aller sur Find My Device</a>
+  </section>
+
+  <section id="iphone">
+    <h2>Localiser un iPhone (ou appareil Apple)</h2>
+    <p>Apple propose un service sécurisé via iCloud :</p>
+    <ul>
+      <li>Connectez-vous avec votre identifiant Apple (iCloud).</li>
+      <li>Choisissez l'appareil à localiser.</li>
+      <li>Activez "Mode Perdu", faites sonner ou effacez le contenu.</li>
+    </ul>
+    <a class="button" href="https://www.icloud.com/find" target="_blank">Aller sur Localiser iPhone</a>
+  </section>
+
+  <section id="imei">
+    <h2>Vérifier l'IMEI de votre téléphone</h2>
+    <p>Si vous avez perdu votre téléphone, vous pouvez vérifier son statut avec l'IMEI :</p>
+    <ul>
+      <li>Entrez l'IMEI du téléphone.</li>
+      <li>Vérifiez si votre téléphone est bloqué, volé, ou en bon état.</li>
+    </ul>
+    <a class="button" href="https://www.imei.info/" target="_blank">Vérifier l'IMEI ici</a>
+  </section>
+
+  <section id="conseils">
+    <h2>Conseils en cas de perte ou vol</h2>
+    <ul>
+      <li>Changez immédiatement vos mots de passe Google ou Apple.</li>
+      <li>Activez la vérification en deux étapes si ce n'est pas déjà fait.</li>
+      <li>Contactez votre opérateur pour bloquer la carte SIM et signaler l’IMEI.</li>
+      <li>Déposez plainte auprès de la police en fournissant l’IMEI.</li>
+    </ul>
+    <p>Pour retrouver l’IMEI : regardez sur la boîte d’origine, la facture ou via votre opérateur.</p>
+  </section>
+
+  <section class="form-container" id="contact">
+    <h2>Contactez-nous pour plus d'aide</h2>
+    <p>Si vous avez besoin d'une assistance supplémentaire, n'hésitez pas à nous envoyer un message !</p>
+    <form id="contact-form">
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" placeholder="Décrivez votre problème" required></textarea>
+      <input type="hidden" name="date" id="dateField" />
+      <input type="hidden" name="date" id="dateField" />
+      <button type="submit">Envoyer</button>
+    </form>
+    <div id="success-message" style="display: none; color: green;">Votre message a été envoyé avec succès !</div>
+    <div id="error-message" style="display: none; color: red;">Erreur lors de l'envoi. Réessayez plus tard.</div>
+  </section>
+</main>
+
+<footer>
+  <p>Site d'assistance à la localisation de téléphone | Créé pour aider en toute légalité.</p>
+  <p><a href="#contact">Contactez-nous</a></p>
+</footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('light-mode');
+  }
+
+  emailjs.init("OokAmcnPExhz98usx");
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const now = new Date();
+    const jours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+    const jour = jours[now.getDay()];
+    const formattedDate = jour + ' ' + now.toLocaleString('fr-FR');
+    document.getElementById('dateField').value = formattedDate;
+
+    emailjs.sendForm('service_zj0pbx8', 'template_60mqlee', this)
+      .then(() => {
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('error-message').style.display = 'none';
+        this.reset();
+      }, () => {
+        document.getElementById('success-message').style.display = 'none';
+        document.getElementById('error-message').style.display = 'block';
+      });
+  });
+</script>
+
+</body>
+</html>

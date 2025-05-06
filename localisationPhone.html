@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bypasser - Vidéos Téléphones</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --bg-dark: #121212;
+      --text-light: #222;
+      --text-dark: #eee;
+      --card-light: #fff;
+      --card-dark: #1e1e1e;
+      --accent: #0066ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background-color: var(--accent);
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.4em;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .video-container {
+      background-color: var(--card-light);
+      margin-bottom: 24px;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: background-color 0.3s ease;
+    }
+
+    .video-container h2 {
+      margin-top: 0;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      font-size: 0.95em;
+      position: sticky;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode .video-container {
+      background-color: var(--card-dark);
+    }
+
+    .dark-mode header, .dark-mode footer {
+      background-color: #000;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-shield-alt"></i> Bypasser <br><a href="localisation-phones.html" style="color: white; text-decration: none; font-size: 20px;">retour</a></h1>
+    <button class="toggle-btn" onclick="toggleMode()">
+      <i id="icon-mode" class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <main>
+    <!-- Vidéos des 20 marques -->
+    <div class="video-container"><h2>1. Apple</h2><video controls><source src="videos/icloud.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>2. Samsung</h2><video controls><source src="videos/samsung.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>3. Huawei</h2><video controls><source src="videos/huawei.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>4. Xiaomi</h2><video controls><source src="videos/xiaomi.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>5. OnePlus</h2><video controls><source src="videos/oneplus.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>6. Oppo</h2><video controls><source src="videos/oppo.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>7. Sony</h2><video controls><source src="videos/sony.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>8. Motorola</h2><video controls><source src="videos/motorola.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>9. LG</h2><video controls><source src="videos/lg.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>10. Google Pixel</h2><video controls><source src="videos/gpixel.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>11. Asus</h2><video controls><source src="videos/asus.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>12. Realme</h2><video controls><source src="videos/realme.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>13. Vivo</h2><video controls><source src="videos/vivo.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>14. Nokia</h2><video controls><source src="videos/nokia.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>15. Alcatel</h2><video controls><source src="videos/alcatel.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>16. ZTE</h2><video controls><source src="videos/zte.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>17. BlackBerry</h2><video controls><source src="videos/blackberry.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>18. Honor</h2><video controls><source src="videos/honor.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>19. TCL</h2><video controls><source src="videos/tcl.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>20. Panasonic</h2><video controls><source src="videos/panasonic.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>21. tecno</h2><video controls><source src="videos/tecno.mp4" type="video/mp4"></video></div>
+    <div class="video-container"><h2>22. itel</h2><video controls><source src="videos/itel.mp4" type="video/mp4"></video></div>
+    </main>
+
+  <footer>
+    <span><i class="fas fa-copyright"></i> 2025 Bypasser. Tous droits réservés.</span>
+    <span><i class="fas fa-tools"></i> Développement : <strong style="text-decoration: underline;">Sedjoums</strong></span>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      const icon = document.getElementById('icon-mode');
+      icon.classList.toggle('fa-sun');
+      icon.classList.toggle('fa-moon');
+    }
+  </script>
+</body>
+</html>
